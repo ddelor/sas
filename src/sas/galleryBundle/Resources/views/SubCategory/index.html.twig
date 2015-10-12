@@ -1,0 +1,52 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Sous-catégories</h1>
+    <a href="{{ path('subcategory_new') }}"> + Ajouter</a>
+    <a href="{{ path('admin') }}"><< Retour à l'accueil</a>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                {# <th>Lien</th>
+                <th>URL</th> #}
+                <th>Catégorie</th>
+                {# <th>Image</th> #}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('subcategory_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.description }}</td>
+                {# <td>{{ entity.link }}</td>
+                <td>{{ entity.url }}</td> #}
+                <td>
+                    {% for category in categories %}
+                        {% if entity.category == category.id %}
+                            {{ category.name }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                {# <td>{{ entity.img }}</td> #}
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('subcategory_show', { 'id': entity.id }) }}">Voir</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('subcategory_edit', { 'id': entity.id }) }}">Editer</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+    {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+
+<div>
+    <h1>Espace d'administration</h1>
+    <ul>
+    	<li><a href="{{ path('category') }}">Voir la liste des catégories</a></li>
+    	<li><a href="{{ path('subcategory') }}">Voir la liste des sous-catégories</a></li>
+    	<li><a href="{{ path('work') }}">Voir la liste des travaux</a></li>
+    	<li><a href="{{ path('event') }}">Voir la liste des expositions</a></li>
+    	<li><a href="{{ path('document') }}">Voir la liste des images</a></li>
+    </ul>
+</div>
+
+{% endblock %}

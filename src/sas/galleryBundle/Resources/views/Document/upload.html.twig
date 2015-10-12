@@ -1,0 +1,13 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+	<h1>Importer une image</h1>
+	<a href="{{ path('document') }}"><< Retour à la liste</a>
+	<a href="{{ path('admin') }}"><< Retour à l'accueil</a>
+
+	<form action="#" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+
+	    <input type="submit" value="Upload Document" />
+	</form>
+{% endblock %}

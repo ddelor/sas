@@ -1,0 +1,25 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block content %}
+
+<div id="homeContainer">
+    <header id="homeHeader">
+        <nav>
+            <ul>
+                <li><a href="{{ path('peintures') }}"><img src="{{ asset('bundles/gallery/images/rub_01.png') }}" alt=""></a></li><!-- 
+                 --><li><a href="{{ path('illustrations') }}"><img src="{{ asset('bundles/gallery/images/rub_02.png') }}" alt=""></a></li><!-- 
+                 --><li><a href="{{ path('carnets') }}"><img src="{{ asset('bundles/gallery/images/rub_03.png') }}" alt=""></a></li><!-- 
+                 --><li><a href="{{ path('expos') }}"><img src="{{ asset('bundles/gallery/images/rub_04.png') }}" alt=""></a></li><!-- 
+                 --><li><a href="{{ path('contact') }}"><img src="{{ asset('bundles/gallery/images/rub_05.png') }}" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="anim"><img src="{{ asset('bundles/gallery/images/anim.gif') }}" alt="Dans l'atelier"></div>
+        <h1 class="intro">
+            Bienvenue sur le site<br>de Christine Sastourn&eacute;.<br>Vous y trouverez une pr&eacute;sentation<br>s&eacute;lective de ses travaux,<br>des d&eacute;buts jusqu'&agrave; aujourd'hui.<br>Bonne visite !
+        </h1>
+    </section>
+</div>
+
+{% endblock %}

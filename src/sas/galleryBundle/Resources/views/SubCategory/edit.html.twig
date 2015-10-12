@@ -1,0 +1,17 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Editer</h1>
+    {#{ dump(entity) }#}
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('subcategory') }}">
+            << Retour à la liste
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

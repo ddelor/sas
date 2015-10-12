@@ -1,0 +1,72 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Exposition</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ entity.category }}</td>
+            </tr>
+            <tr>
+                <th>Année</th>
+                <td>{{ entity.year }}</td>
+            </tr>
+            <tr>
+                <th>Expo 1</th>
+                <td>{{ entity.expo1 }}</td>
+            </tr>
+            <tr>
+                <th>Lien 1</th>
+                <td>{{ entity.link1 }}</td>
+            </tr>
+            <tr>
+                <th>URL 1</th>
+                <td>{{ entity.url1 }}</td>
+            </tr>
+            <tr>
+                <th>Expo 2</th>
+                <td>{{ entity.expo2 }}</td>
+            </tr>
+            <tr>
+                <th>Lien 2</th>
+                <td>{{ entity.link2 }}</td>
+            </tr>
+            <tr>
+                <th>URL 2</th>
+                <td>{{ entity.url2 }}</td>
+            </tr>
+            <tr>
+                <th>Expo 3</th>
+                <td>{{ entity.expo3 }}</td>
+            </tr>
+            <tr>
+                <th>Lien 3</th>
+                <td>{{ entity.link3 }}</td>
+            </tr>
+            <tr>
+                <th>URL 3</th>
+                <td>{{ entity.url3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('event') }}">
+            << Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('event_edit', { 'id': entity.id }) }}">
+            Editer
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

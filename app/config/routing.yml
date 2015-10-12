@@ -1,0 +1,35 @@
+# gallery:
+#     resource: "@galleryBundle/Resources/config/routing.yml"
+#     prefix:   /
+
+default:
+    resource: "@galleryBundle/Controller/DefaultController.php"
+    type: annotation
+
+admin:
+    resource: "@galleryBundle/Controller/AdminController.php"
+    type: annotation
+
+category:
+    resource: "@galleryBundle/Controller/CategoryController.php"
+    type: annotation
+
+subcategory:
+    resource: "@galleryBundle/Controller/SubCategoryController.php"
+    type: annotation
+
+work:
+    resource: "@galleryBundle/Controller/WorkController.php"
+    type: annotation
+
+#Expo:
+#    resource: "@galleryBundle/Controller/ExpoController.php"
+#    type: annotation
+
+event:
+    resource: "@galleryBundle/Controller/EventController.php"
+    type: annotation
+
+document:
+    resource: "@galleryBundle/Controller/DocumentController.php"
+    type: annotation

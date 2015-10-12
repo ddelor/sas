@@ -1,0 +1,12 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% include 'galleryBundle::_header.html.twig' %}
+
+<section id="error">
+    <h1>Oups! Une erreur est survenue</h1>
+    <h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</h2>
+</section>
+
+{% endblock %}

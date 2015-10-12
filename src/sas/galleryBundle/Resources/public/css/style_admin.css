@@ -1,0 +1,155 @@
+/**************************************/
+/*                GLOBAL              */
+/**************************************/
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.backButton {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clear { clear: both; }
+
+h1 {
+    font-weight: 600;
+    font-size: 23px;
+    text-transform: uppercase;
+    color: white;
+    background-color: gray;
+    padding: 5px;
+    margin: 20px 0 0 0;
+
+}
+
+a, .btn {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background-color: silver;
+    padding: 5px;
+    margin: 15px 5px 0 0;
+}
+
+a:hover, .btn:hover, button:hover {
+    background-color: gray;
+}
+
+form {
+    margin-top: 15px;
+}
+
+form label {
+    min-width: 150px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+form div {
+    border-bottom: 10px solid white;
+}
+
+form input, form textarea, form select {
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: #eeeeee;
+    padding: 5px;
+    width: 300px;
+}
+
+form select {
+    margin-left: 11px;
+    width: 310px;
+    height: 26px;
+}
+
+button {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    background-color: silver;
+    padding: 5px;
+    margin: 15px 5px 0 0;
+    border: none;
+    height: 26px;
+}
+
+.records_list {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.records_list th {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+.records_list td {
+    padding: 5px;
+}
+
+.record_properties {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.record_properties tr {
+    border-bottom: 10px solid white;
+}
+
+.record_properties th {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+.record_properties td {
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.imgList {
+    margin-top: 15px;
+}
+
+.imgList li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.imgList .icon {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+

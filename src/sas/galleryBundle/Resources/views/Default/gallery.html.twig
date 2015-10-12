@@ -1,0 +1,69 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block addCss %}
+	<link rel="stylesheet" href="{{ asset('bundles/gallery/lib/fancybox/jquery.fancybox.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'galleryBundle::_header.html.twig' %}
+
+<section id="gallery">
+    {# {{ dump(subCategory.category) }}
+    {{ dump(subCategory.id) }} #}
+    {% if workList %}
+        <h1>{{ subCategory.name }}</h1>
+        {% if subCategory.description %}
+            <h2>{{ subCategory.description }} {% if subCategory.link %}<a href="{{ subCategory.url }}" target="_blank">{{ subCategory.link }}</a>{% endif %}</h2>
+        {% endif %}
+        <ul class="row">
+            {% for value in workList %}
+                {% set title = value.title %}
+                {% set techno = value.techno %}
+                {% set size = value.size %}
+                {% set year = value.year %}
+                {% if subCategory.category == 2 or subCategory.category == 3 and subCategory.name != "Le catalogue" %}
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-title">
+                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="">
+                            <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
+                        </a>
+                    </li>
+                {% elseif subCategory.id == 9 %}
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-title">
+                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="">
+                            <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="{{ title }} {% if subCategory.name != "Le catalogue" %}({{ techno }} {% if size %}- {{ size }} cm {% endif %} - {{ year }}){% endif %}">
+                            <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
+                            <p>{{ value.title }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Cette galerie est en cours de construction.</p>
+    {% endif %}
+</section>
+
+<div class="clear"></div>
+
+<a href="#" class="backButton">
+    <img src="{{ asset('bundles/gallery/images/retour.jpg') }}">
+</a>
+
+{% endblock %}
+
+{% block addScript %}
+	<script src="{{ asset('bundles/gallery/lib/fancybox/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('bundles/gallery/lib/fancybox/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ asset('bundles/gallery/js/gallery.js') }}"></script>
+	<script>
+        $(document).ready(function() {
+            gallery.galleryLoad();
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% include 'galleryBundle::_header.html.twig' %}
+
+<section id="expos">
+    <h1>Depuis 1980 : Expositions de peinture collectives et personnelles</h1>
+    {#{ dump(expoPeintList) }#}
+    <ul>
+        {% for value in expoPeintList %}
+            <li>
+                <div class="date">{{ value.year }}</div>
+                <div class="text">
+                    <ul>
+                        {% if value.expo1 %}
+                            <li>{{ value.expo1 }}{% if value.link1 %}, <a href="{{ value.url1 }}" target="_blanck">{{ value.link1 }}</a>{% endif %}</li>
+                        {% endif %}
+                        {% if value.expo2 %}
+                            <li>{{ value.expo2 }}{% if value.link2 %}, <a href="{{ value.url2 }}" target="_blanck">{{ value.link2 }}</a>{% endif %}</li>
+                        {% endif %}
+                        {% if value.expo3 %}
+                            <li>{{ value.expo3 }}{% if value.link3 %}, <a href="{{ value.url3 }}" target="_blanck">{{ value.link3 }}</a>{% endif %}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Depuis 1990 : Illustrations</h1>
+    {#{ dump(expoIllusList) }#}
+    <ul>
+        {% for value in expoIllusList %}
+            <li>
+                <div class="date">{{ value.year }}</div>
+                <div class="text">
+                    <ul>
+                        {% if value.expo1 %}
+                            <li>{{ value.expo1 }}{% if value.link1 %}, <a href="{{ value.url1 }}" target="_blanck">{{ value.link1 }}</a>{% endif %}</li>
+                        {% endif %}
+                        {% if value.expo2 %}
+                            <li>{{ value.expo2 }}{% if value.link2 %}, <a href="{{ value.url2 }}" target="_blanck">{{ value.link2 }}</a>{% endif %}</li>
+                        {% endif %}
+                        {% if value.expo3 %}
+                            <li>{{ value.expo3 }}{% if value.link3 %}, <a href="{{ value.url3 }}" target="_blanck">{{ value.link3 }}</a>{% endif %}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<div class="clear"></div>
+
+<a href="#" class="backButton">
+    <img src="{{ asset('bundles/gallery/images/retour.jpg') }}">
+</a>
+
+{% endblock %}

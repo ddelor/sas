@@ -1,0 +1,27 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% include 'galleryBundle::_header.html.twig' %}
+
+<section id="gallery">
+    {#{ dump(subCategoryList) }#}
+    <ul class="row">
+        {% for value in subCategoryList %}
+            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <a href="{{ path('gallery', {'id' : value.id}) }}">
+                    <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
+                <p>{{ value.name }}</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<div class="clear"></div>
+
+<a href="#" class="backButton">
+    <img src="{{ asset('bundles/gallery/images/retour.jpg') }}">
+</a>
+
+{% endblock %}

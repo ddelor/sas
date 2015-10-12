@@ -1,0 +1,15 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Ajouter</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('event') }}">
+            << Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

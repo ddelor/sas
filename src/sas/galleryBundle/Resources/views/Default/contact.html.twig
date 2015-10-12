@@ -1,0 +1,21 @@
+{% extends 'galleryBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% include 'galleryBundle::_header.html.twig' %}
+
+<section id="contact">
+    <img class="portrait" src="{{ asset('bundles/gallery/images/contact-2015.jpg') }}" alt="Christine Sastourné">
+    <div>
+        <p>Pour me contacter : <a href="mailto:sastourney@wanadoo.fr">sastourney@wanadoo.fr</a></p>
+        <p class="infos">Webmaster : <a target="_blank" href="https://fr.linkedin.com/pub/dominique-delor/6b/76b/711">Dominique Delor</a></p>
+    </div>
+</section>
+
+<div class="clear"></div>
+
+<a href="#" class="backButton">
+    <img src="{{ asset('bundles/gallery/images/retour.jpg') }}">
+</a>
+
+{% endblock %}

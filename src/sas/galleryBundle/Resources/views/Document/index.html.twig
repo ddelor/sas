@@ -1,0 +1,17 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Images</h1>
+    <a href="{{ path('upload') }}"> + Ajouter</a>
+    <a href="{{ path('admin') }}"><< Retour à l'accueil</a>
+
+    <ul class="imgList">
+        {% for entity in entities %}
+            <li>
+                <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ entity.path) }});"></div>
+                <p>{{ entity.path }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% endblock %}

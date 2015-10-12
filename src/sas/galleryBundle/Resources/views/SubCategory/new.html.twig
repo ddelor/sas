@@ -1,0 +1,39 @@
+{% extends 'galleryBundle::layout_admin.html.twig' %}
+
+{% block content %}
+    <h1>Ajouter</h1>
+
+    {{ form_start(form) }}
+        <div>
+            {{form_label(form.name, 'Nom :')}}
+            {{form_errors(form.name)}}
+            {{form_widget(form.name)}}
+        </div>
+        <div>
+            {{form_label(form.description, 'Description :')}}
+            {{form_errors(form.description)}}
+            {{form_widget(form.description)}}
+        </div>
+        <div>
+            {{form_label(form.category, 'Catégorie :')}}
+            {{form_errors(form.category)}}
+            {{form_widget(form.category)}}
+        </div>
+        <div>
+            {{form_label(form.img, 'Image :')}}
+            {{form_errors(form.img)}}
+            {{form_widget(form.img)}}
+        </div>
+        <div>
+            {{form_widget(form._token)}}
+        </div>
+    {{ form_end(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('subcategory') }}">
+            << Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}
