@@ -22,6 +22,7 @@
                 {% set techno = value.techno %}
                 {% set size = value.size %}
                 {% set year = value.year %}
+                {% set comment = value.comment %}
                 {% if subCategory.category == 2 or subCategory.category == 3 and subCategory.name != "Le catalogue" %}
                     <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-title">
                         <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="">
@@ -36,7 +37,7 @@
                     </li>
                 {% else %}
                     <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="{{ title }} {% if subCategory.name != "Le catalogue" %}({{ techno }} {% if size %}- {{ size }} cm {% endif %} - {{ year }}){% endif %}">
+                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="{{ title }} {% if subCategory.name != "Le catalogue" %}({{ techno }} {% if size %}- {{ size }} cm {% endif %} - {{ year }}<br>=> {{ comment }}){% endif %}">
                             <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
                             <p>{{ value.title }}</p>
                         </a>

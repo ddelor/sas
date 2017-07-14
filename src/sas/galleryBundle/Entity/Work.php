@@ -74,6 +74,13 @@ class Work
      */
     private $year;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="string", length=255, nullable=true)
+     */
+    private $comment;
+
 
     /**
      * Get id
@@ -244,5 +251,28 @@ class Work
     public function getYear()
     {
         return $this->year;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return Work
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
     }
 }

@@ -12,7 +12,7 @@ security:
                 users:
                     #user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     #admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-                    webmaster: { password: 220978dev, roles: [ 'ROLE_ADMIN' ] }
+                    webmaster: { password: 220978dev, roles: 'ROLE_ADMIN' }
                     sas: { password: Dimanche4aout, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
@@ -25,7 +25,8 @@ security:
             security: false
 
         secured_area:
-            pattern:    ^/admin/
+            #pattern:    ^/admin/
+            pattern:    ^/
             #form_login:
             #    check_path: _security_check
             #    login_path: _demo_login
