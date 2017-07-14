@@ -37,7 +37,7 @@
                     </li>
                 {% else %}
                     <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="{{ title }} {% if subCategory.name != "Le catalogue" %}({{ techno }} {% if size %}- {{ size }} cm {% endif %} - {{ year }}{{ comment }}){% endif %}">
+                        <a class="fancybox-effects-c" rel="gallery1" href="{{ asset('bundles/gallery/images/' ~ value.img) }}" title="{{ title }} {% if subCategory.name != "Le catalogue" %}({{ techno }} {% if size %}- {{ size }} cm {% endif %} - {{ year }}){{ comment }}{% endif %}">
                             <div class="icon" style="background-image:url({{ asset('bundles/gallery/images/' ~ value.img) }});"></div>
                             <p>{{ value.title }}</p>
                         </a>
